@@ -1,0 +1,31 @@
+name: Building Kernel
+
+on:
+  watch:
+    types: [started]
+  workflow_dispatch:
+ 
+jobs:
+  build:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout kernel source
+      uses: actions/checkout@v2
+
+    - name: Checkout zipper
+      uses: actions/checkout@v2
+      with:
+        repository: lemniskett/AnyKernel3
+        path: zipper
+
+    - name: Android kernel build
+      uses: akzzy/msm-4.9KSU@main
+      id: build
+      env:
+        NAME: ksuneko
+      with:
+        arch: arm64
+        compiler: gcc/9
+        defconfig: blueline_defconfig
+        image: Image.gz-dtb
