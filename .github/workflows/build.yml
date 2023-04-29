@@ -20,10 +20,10 @@ jobs:
         path: zipper
 
     - name: Android kernel build
-      uses: akzzy/msm-4.9KSU@thirteen
+      uses: lemniskett/android-kernel-actions@master
       id: build
       env:
-        NAME: ksuneko
+        NAME: Dark-Ages-Último
       with:
         arch: arm64
         compiler: gcc/9
