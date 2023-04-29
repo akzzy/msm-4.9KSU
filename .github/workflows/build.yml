@@ -20,7 +20,7 @@ jobs:
         path: zipper
 
     - name: Android kernel build
-      uses: akzzy/msm-4.9KSU@main
+      uses: akzzy/msm-4.9KSU@thirteen
       id: build
       env:
         NAME: ksuneko
