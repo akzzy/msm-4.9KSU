@@ -24,6 +24,6 @@ jobs:
         NAME: Dark-Ages-Último
       with:
         arch: arm64
-        compiler: clang/15
+        compiler: proton-clang/master
         defconfig: b1c1_defconfig
         image: Image.gz-dtb
