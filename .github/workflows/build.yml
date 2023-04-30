@@ -27,9 +27,3 @@ jobs:
         compiler: gcc/10
         defconfig: b1c1_defconfig
         image: Image.gz-dtb
-
-    - name: Release build
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: ${{ steps.build.outputs.outfile }}
-        token: ${{ secrets.GITHUB_TOKEN }}
