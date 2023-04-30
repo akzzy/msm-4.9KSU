@@ -193,7 +193,8 @@ static void show_data(unsigned long addr, int nbytes, const char *name)
 	 */
 	if (addr < KIMAGE_VADDR || addr > -256UL)
 		return;
-
+		
+        void *addr = (void *)&my_var;     
 	printk("\n%s: %pS:\n", name, addr);
 
 	/*
