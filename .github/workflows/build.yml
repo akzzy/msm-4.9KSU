@@ -2,7 +2,7 @@ name: KSU Build
 
 on:
   push:
-    tags: [thirteen]
+    branches: thirteen
 
 jobs:
   build:
