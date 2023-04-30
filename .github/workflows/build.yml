@@ -1,8 +1,8 @@
-name: Build on Tag
+name: KSU Build
 
 on:
   push:
-    tags: 'thirteen'
+    tags: thirteen
 
 jobs:
   build:
