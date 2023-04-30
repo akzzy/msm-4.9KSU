@@ -1,13 +1,11 @@
-name: Building Kernel
+name: Build on Tag
 
 on:
-  watch:
-    types: [started]
-  workflow_dispatch:
- 
+  push:
+    tags: 'thirteen'
+
 jobs:
   build:
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
     - name: Checkout kernel source
@@ -26,6 +24,12 @@ jobs:
         NAME: Dark-Ages-Último
       with:
         arch: arm64
-        compiler: clang/15
+        compiler: gcc/10
         defconfig: b1c1_defconfig
         image: Image.gz-dtb
+
+    - name: Release build
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: ${{ steps.build.outputs.outfile }}
+        token: ${{ secrets.GITHUB_TOKEN }}
